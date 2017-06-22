@@ -1,0 +1,1 @@
+java -jar tabula-0.9.2-jar-with-dependencies.jar -g -o 080617.csv 080617.pdf 

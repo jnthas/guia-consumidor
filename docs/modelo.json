@@ -1,0 +1,24 @@
+guiaConsumidor: {
+	data: "2016-06-08",
+	mercados: ["BAHAMAS", "BRETAS", "PAIS E FILHOS", "MART MINAS", "FORTALEZA", "CARREFOUR", "VILLEFORT", "REI DO ARROZ"],
+	produtos: [
+		{
+			nome: "Açúcar cristal - mais barato",
+			categoria: "Alimentos",
+			unidade: "5KG",
+			variacao: 49.6,
+			precos: [null, 9.85, 8.55, 9.49, 8.99, 12.79, 8.69, 8.55]
+		},
+		{
+			nome: "CARNE BOVINA - PICANHA",
+			categoria: "Carnes",
+			unidade: "1KG",
+			variacao: 127.9,
+			precos: [null, 25.89, 39.90, 29.90, 29.90, 27.89, 21.90, 49.90]
+		}
+	]
+
+}
+
+java -jar tabula-0.9.2-jar-with-dependencies.jar ../080617.pdf -g -o ../080617.csv
+curl -s -o /dev/null -w "%{http_code}" https://www.pjf.mg.gov.br/secretarias/saa/pesquisas/guia_consumidor/arquivos/2017/080617.pdf

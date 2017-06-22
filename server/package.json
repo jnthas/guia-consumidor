@@ -1,0 +1,15 @@
+{
+  "name": "guia-consumidor",
+  "version": "1.0.0",
+  "url": "https://github.com/jnthas/guia-consumidor.git",
+  "description": "Guia do Consumidor App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathas Amaral (jnthas@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^2.4.0"
+  }
+}

@@ -1,2 +1,3 @@
-# guia-consumidor
-Guia do Consumidor App
+# Guia do Consumidor
+
+Backend e aplicativo do Guia do Consumidor.
