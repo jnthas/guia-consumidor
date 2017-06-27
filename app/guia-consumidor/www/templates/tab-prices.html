@@ -1,0 +1,20 @@
+<ion-view view-title="Guia do Consumidor">
+  <ion-content class="dark">
+
+    <div class="list card">
+
+      <a ng-repeat="category in categories" ui-sref="tab.categories({name: '{{category}}'})" class="item item-icon-left">
+        <i class="icon ion-chevron-right"></i>
+        {{category}}
+      </a>
+
+
+      <a href="#" class="item item-icon-left energized">
+        <i class="icon ion-star"></i>
+        PROMOÇÕES!
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>
