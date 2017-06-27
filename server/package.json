@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "fast-csv": "^2.4.0",
-    "numeral": "^2.0.6"
+    "lodash": "^4.17.4",
+    "numeral": "^2.0.6",
+    "shorthash": "0.0.2"
   }
 }

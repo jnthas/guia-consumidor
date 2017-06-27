@@ -1,6 +1,9 @@
 var csv = require("fast-csv");
 var numeral = require("numeral");
 var fs = require('fs');
+var shorthash = require("shorthash");
+var _ = require("lodash");
+
 
 
 numeral.register('locale', 'br', {
@@ -34,9 +37,9 @@ var PRICE_VARIATION_COL = 10;
 
 
 var guiaConsumidor = {
-  data: new Date(),
-  mercados: [],
-  produtos: []
+  date: new Date().getTime(),
+  markets: [],
+  products: []
 };
 var products = [];
 var category = null;
@@ -57,9 +60,9 @@ csv
 })
 .on("end", function () {
 
-  guiaConsumidor.produtos = products;
+  guiaConsumidor.products = products;
 
-  console.dir(guiaConsumidor,{depth: null});
+  console.dir(guiaConsumidor, {depth: null});
 	console.log("done", productCount);
 
   fs.writeFile("080617.json", JSON.stringify(guiaConsumidor), function(err) {
@@ -100,21 +103,22 @@ function processRow (row) {
     prod = prod.map(function (e) {
       var n = numeral(e);
       return n.value();
-
     });
+
+    var highestPrice = _.max(prod);
+    var lowestPrice = _.min(prod);
 
 
     products.push({
-      nome: row[PRODUCT_NAME_COL],
-      categoria: category,
-      unidade: row[UNITY_COL].toLowerCase(),
-      variacao: numeral(row[PRICE_VARIATION_COL]).value(),
-      precos: prod
+      id: shorthash.unique(row[PRODUCT_NAME_COL]),
+      name: row[PRODUCT_NAME_COL],
+      category: category,
+      unity: row[UNITY_COL].toLowerCase(),
+      variation: Math.floor(numeral(row[PRICE_VARIATION_COL]).value() * 1000)/10,
+      prices: prod,
+      maxPrice: highestPrice,
+      minPrice: lowestPrice
     });
-
-
-    
-    //console.log(prod);
 
   }
 
@@ -144,7 +148,7 @@ function getMarketNames(row) {
   
   //console.log('markets: ', markets);
 
-  guiaConsumidor.mercados = markets;
+  guiaConsumidor.markets = markets;
 
 
 }

@@ -1,20 +1,22 @@
 guiaConsumidor: {
-	data: "2016-06-08",
-	mercados: ["BAHAMAS", "BRETAS", "PAIS E FILHOS", "MART MINAS", "FORTALEZA", "CARREFOUR", "VILLEFORT", "REI DO ARROZ"],
-	produtos: [
+	"date": "2016-06-08",
+	"markets": ["BAHAMAS", "BRETAS", "PAIS E FILHOS", "MART MINAS", "FORTALEZA", "CARREFOUR", "VILLEFORT", "REI DO ARROZ"],
+	"products": [
 		{
-			nome: "Açúcar cristal - mais barato",
-			categoria: "Alimentos",
-			unidade: "5KG",
-			variacao: 49.6,
-			precos: [null, 9.85, 8.55, 9.49, 8.99, 12.79, 8.69, 8.55]
+			"id": "Z27usj",
+			"name": "Açúcar cristal - mais barato",
+			"category": "Alimentos",
+			"unity": "5KG",
+			"variation": 49.6,
+			"prices": [null, 9.85, 8.55, 9.49, 8.99, 12.79, 8.69, 8.55]
 		},
 		{
-			nome: "CARNE BOVINA - PICANHA",
-			categoria: "Carnes",
-			unidade: "1KG",
-			variacao: 127.9,
-			precos: [null, 25.89, 39.90, 29.90, 29.90, 27.89, 21.90, 49.90]
+			"id": "Zjh21",
+			"name": "CARNE BOVINA - PICANHA",
+			"category": "Carnes",
+			"unity": "1KG",
+			"variation": 127.9,
+			"prices": [null, 25.89, 39.90, 29.90, 29.90, 27.89, 21.90, 49.90]
 		}
 	]
 
