@@ -1,0 +1,27 @@
+<ion-view view-title="Produto">
+  <ion-content class="padding">
+
+	<div class="list card">
+
+	  <div class="item item-icon-left">
+	    <i class="icon ion-pricetag energized"></i>
+	    <h2>{{product.name}}</h2>
+	    <p><strong>Categoria:</strong> {{product.category}}</p>
+	    <p><strong>Unidade:</strong> {{product.unity}}</p>
+	    <p><strong>Variação de Preço:</strong> ~{{product.variation | number:2}}%</p>
+	  </div>
+
+		<div class="item">
+			<h2>Preços</h2>
+		  <ion-list class="list-inset">
+				<ion-item class="item-icon-left" ng-repeat="price in product.prices track by $index" ng-class="{'assertive': (price === product.maxPrice), 'balanced': (price === product.minPrice)}">			
+
+					<i class="icon" ng-class="{'ion-arrow-up-b': (price === product.maxPrice), 'ion-arrow-down-b': (price === product.minPrice), 'ion-arrow-right-b': (price !== product.maxPrice && price !== product.minPrice)}"></i>
+					<p>{{price | currency:'R$ '}} ({{markets[$index]}})</p>
+					
+				</ion-item>
+			</ion-list>
+		</div>
+
+  </ion-content>
+</ion-view>
